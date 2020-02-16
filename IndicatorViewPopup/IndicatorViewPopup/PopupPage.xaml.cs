@@ -1,13 +1,18 @@
-﻿using Xamarin.Forms.Xaml;
+﻿using IndicatorViewPopup.ViewModels;
+using Xamarin.Forms.Xaml;
 
 namespace IndicatorViewPopup
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopupPage : Rg.Plugins.Popup.Pages.PopupPage
     {
-        public PopupPage()
+        private PopupViewModel viewModel;
+
+        public PopupPage(PopupViewModel vm)
         {
             InitializeComponent();
+            viewModel = vm;
+            BindingContext = viewModel;
         }
     }
 }

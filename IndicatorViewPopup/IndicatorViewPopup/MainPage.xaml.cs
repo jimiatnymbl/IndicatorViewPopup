@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndicatorViewPopup.ViewModels;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
 
@@ -16,7 +17,7 @@ namespace IndicatorViewPopup
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            PopupPage popupPage = new PopupPage();
+            PopupPage popupPage = new PopupPage(new PopupViewModel());
             Rg.Plugins.Popup.Services.PopupNavigation.Instance.PushAsync(popupPage);
         }
     }
